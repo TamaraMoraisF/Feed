@@ -5,7 +5,7 @@
     <description>Descricao da Camiseta Basica.</description>
     <price>50.00</price>
     <stock>5</stock>
-    <color>null</color>
+    <color>Amarelo</color>
     <image_link>https://example.com/image1.jpg</image_link>
   </product>
   <product>
@@ -14,7 +14,7 @@
     <description>Descricao do Sapato Azul.</description>
     <price>35.00</price>
     <stock>2</stock>
-    <color>null</color>
+    <color>Azul</color>
     <image_link>https://example.com/image2.jpg</image_link>
   </product>
   <product>
@@ -33,7 +33,7 @@
     <price>60.00</price>
     <stock>15</stock>
     <color>Vermelho</color>
-    <image_link>https://example.com/image4.jpg</image_link>
+    <image_link>https://example.com/new_image_217865_hx.jpg</image_link>
   </product>
   <product>
     <id>382910</id>
@@ -78,6 +78,6 @@
     <price>16.00</price>
     <stock>10</stock>
     <color>Vermelho</color>
-    <image_link>https://example.com/new_image_i4.jpg</image_link>
+    <image_link>https://example.com/new_image_246804_vj.jpg</image_link>
   </product>
 </feed>
