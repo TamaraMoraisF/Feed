@@ -19,7 +19,7 @@
     <image_link>https://example.com/image2.jpg</image_link>
   </product>
   <product>
-    <id>246804</id>
+    <id>246809</id>
     <tittle>Calca Jeans Azul</tittle>
     <description>Descricao da Calca Jeans.</description>
     <price>45.00</price>
@@ -55,7 +55,7 @@
     <image_link>https://example.com/image6.jpg</image_link>
   </product>
   <product>
-    <id>932576</id>
+    <id>277865</id>
     <tittle>Jaqueta Jeans Azul</tittle>
     <description>Descricao da Jaqueta Jeans.</description>
     <price>70.00</price>
@@ -89,5 +89,14 @@
     <stock>0</stock>
     <color>Vermelho</color>
     <image_link>https://example.com/image10.jpg</image_link>
+  </product>
+   <product>
+    <id>246804</id>
+    <tittle>Blusa Rosa</tittle>
+    <description>Descricao da Blusa Rosa.</description>
+    <price>16.00</price>
+    <stock>10</stock>
+    <color>Vermelho</color>
+    <image_link>https://example.com/image11.jpg</image_link>
   </product>
 </feed>
