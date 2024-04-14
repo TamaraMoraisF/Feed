@@ -1,7 +1,25 @@
 <feed>
   <product>
+    <id>261557</id>
+    <tittle>Camiseta Basica Amarelo</tittle>
+    <description>Descricao da Camiseta Basica.</description>
+    <price>50.00</price>
+    <stock>5</stock>
+    <color>Amarelo</color>
+    <image_link>https://example.com/image1.jpg</image_link>
+  </product>
+  <product>
+    <id>235840</id>
+    <tittle>Sapato Azul</tittle>
+    <description>Descricao do Sapato Azul.</description>
+    <price>35.00</price>
+    <stock>2</stock>
+    <color>Azul</color>
+    <image_link>https://example.com/image2.jpg</image_link>
+  </product>
+  <product>
     <id>246804</id>
-    <name>Calca Jeans</name>
+    <tittle>Calca Jeans Azul</tittle>
     <description>Descricao da Calca Jeans.</description>
     <price>45.00</price>
     <stock>5</stock>
@@ -10,7 +28,7 @@
   </product>
   <product>
     <id>217865</id>
-    <name>Vestido Floral</name>
+    <tittle>Vestido Floral Verde</tittle>
     <description>Descricao do Vestido Floral.</description>
     <price>60.00</price>
     <stock>15</stock>
@@ -19,7 +37,7 @@
   </product>
   <product>
     <id>382910</id>
-    <name>Moletom Amarelo</name>
+    <tittle>Moletom Amarelo</tittle>
     <description>Descricao do Moletom Amarelo.</description>
     <price>40.00</price>
     <stock>8</stock>
@@ -28,16 +46,16 @@
   </product>
   <product>
     <id>175640</id>
-    <name>Blusa Listrada</name>
+    <tittle>Blusa Listrada Rosa</tittle>
     <description>Descricao da Blusa Listrada.</description>
     <price>55.00</price>
     <stock>2</stock>
-    <color>null</color>
+    <color>Roxo</color>
     <image_link>https://example.com/image6.jpg</image_link>
   </product>
   <product>
     <id>932576</id>
-    <name>Jaqueta Jeans</name>
+    <tittle>Jaqueta Jeans Azul</tittle>
     <description>Descricao da Jaqueta Jeans.</description>
     <price>70.00</price>
     <stock>20</stock>
@@ -45,30 +63,12 @@
     <image_link>https://example.com/image7.jpg</image_link>
   </product>
   <product>
-    <id>840273</id>
-    <name>Bermuda Verde</name>
-    <description>Descricao da Bermuda Verde.</description>
-    <price>25.00</price>
-    <stock>3</stock>
-    <color>Verde</color>
-    <image_link>https://example.com/image8.jpg</image_link>
-  </product>
-  <product>
     <id>673489</id>
-    <name>Camisa Polo</name>
+    <tittle>Camisa Polo Preta</tittle>
     <description>Descricao da Camisa Polo.</description>
     <price>65.00</price>
     <stock>12</stock>
-    <color>null</color>
+    <color>Branco</color>
     <image_link>https://example.com/image9.jpg</image_link>
   </product>
-  <product>
-    <id>194820</id>
-    <name>Bolsa Vermelha</name>
-    <description>Descricao da Bolsa Vermelha.</description>
-    <price>30.00</price>
-    <stock>6</stock>
-    <color>Vermelho</color>
-    <image_link>https://example.com/image10.jpg</image_link>
-  </product>
-</feed>
+  </feed>

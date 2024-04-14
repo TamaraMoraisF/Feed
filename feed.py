@@ -19,21 +19,35 @@ if response.status_code == 200:
         tree = ET.parse('feed_psel.xml')
         root = tree.getroot()
 
-        # Excluir produtos fora de estoque
+        # Excluir produtos fora de estoque e salvar em um novo arquivo
+        new_tree = ET.ElementTree(root)
         for product in root.findall('product'):
-            stock = product.find('stock').text
-            if int(stock) <= 0:
+            stock = int(product.find('stock').text)
+            if stock <= 0:
                 root.remove(product)
 
-        # Salva as alterações em um novo arquivo XML
+        # IDs dos produtos para adicionar a cor
+        product_ids = ['261557', '235840']
+
+        # Iterar sobre os produtos no XML
+        for product in root.findall('product'):
+            product_id = product.find('id').text
+            if product_id in product_ids:
+                name = product.find('tittle').text  # Corrigido para 'tittle' em vez de 'title'
+                last_word = name.split()[-1]  # Obtém a última palavra do título
+                product.find('color').text = last_word
+
         tree.write('feed_updated.xml')
-        print('Produtos fora de estoque removidos com sucesso!')
+        print('Produtos sem estoque removidos e tags color atualizadas com sucesso!')
 
     except ET.ParseError as e:
         print(f'Erro ao abrir o arquivo XML: {e}')
 
 else:
     print('Falha ao baixar o arquivo XML.')
+
+
+
 
 # Excluir produtos fora de estoque
 
