@@ -1,23 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <feed>
-  <product>
-    <id>261557</id>
-    <name>Camiseta Basica</name>
-    <description>Descricao da Camiseta Basica.</description>
-    <price>50.00</price>
-    <stock>0</stock>
-    <color>null</color>
-    <image_link>https://example.com/image1.jpg</image_link>
-  </product>
-  <product>
-    <id>235840</id>
-    <name>Sapato Azul</name>
-    <description>Descricao do Sapato Azul.</description>
-    <price>35.00</price>
-    <stock>0</stock>
-    <color>null</color>
-    <image_link>https://example.com/image2.jpg</image_link>
-  </product>
   <product>
     <id>246804</id>
     <name>Calca Jeans</name>
