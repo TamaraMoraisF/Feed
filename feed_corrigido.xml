@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <feed>
   <product>
     <id>261557</id>
@@ -33,7 +34,7 @@
     <price>60.00</price>
     <stock>15</stock>
     <color>Vermelho</color>
-    <image_link>https://example.com/new_image_qxmfqt.jpg</image_link>
+    <image_link>https://example.com/new_image_4f90fe.jpg</image_link>
   </product>
   <product>
     <id>382910</id>
@@ -78,6 +79,6 @@
     <price>16.00</price>
     <stock>10</stock>
     <color>Vermelho</color>
-    <image_link>https://example.com/new_image_gakmuu.jpg</image_link>
+    <image_link>https://example.com/new_image_wdvlj5.jpg</image_link>
   </product>
 </feed>

@@ -46,8 +46,15 @@ def processar_xml(root):
         corrigir_links_de_imagem(id_produto, ids_produtos_imagens, produto)
 
 def salvar_xml(root, nome_arquivo):
-    arvore = ET.ElementTree(root)
-    arvore.write(nome_arquivo)
+    with open(nome_arquivo, 'wb') as f:
+        f.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
+
+        for child in root.findall('feed'):
+            root.remove(child)
+
+        nova_arvore = ET.ElementTree(root)
+        nova_arvore.write(f, encoding='utf-8', xml_declaration=False, default_namespace=None, short_empty_elements=True)
+
     print('Arquivo XML corrigido com sucesso.')
 
 # URL do feed XML e nome do arquivo local
