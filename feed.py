@@ -14,59 +14,53 @@ def download_xml(url, filename):
         print('Falha ao baixar o arquivo XML.')
         return False
 
-def remove_out_of_stock_products(root):
-    for product in root.findall('product'):
-        stock = int(product.find('stock').text)
-        if stock <= 0:
-            root.remove(product)
+def remover_produtos_sem_estoque(root):
+    for produto in root.findall('product'):
+        estoque = int(produto.find('stock').text)
+        if estoque <= 0:
+            root.remove(produto)
 
-def add_color_to_products(root, product_ids_color):
-    for product in root.findall('product'):
-        product_id = product.find('id').text
-        if product_id in product_ids_color:
-            name = product.find('tittle').text
-            last_word = name.split()[-1]
-            product.find('color').text = last_word
+def adicionar_cor_a_produtos(id_produto, ids_produtos_cor, produto):
+    if id_produto in ids_produtos_cor:
+        nome = produto.find('tittle').text
+        ultima_palavra = nome.split()[-1]
+        produto.find('color').text = ultima_palavra
 
-def correct_image_links(root, product_ids_images):
-    for product in root.findall('product'):
-        product_id = product.find('id').text
-        if product_id in product_ids_images:
-            random_suffix = ''.join(random.choices(string.ascii_lowercase + string.digits, k=2))
-            new_link = f'https://example.com/new_image_{product_id}_{random_suffix}.jpg'
-            product.find('image_link').text = new_link
-            print(f'Link de imagem corrigido para o produto ID {product_id}: {new_link}')
+def corrigir_links_de_imagem(id_produto, ids_produtos_imagens, produto):
+    if id_produto in ids_produtos_imagens:
+        sufixo_aleatorio = ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
+        novo_link = f'https://example.com/new_image_{sufixo_aleatorio}.jpg'
+        produto.find('image_link').text = novo_link
+        print(f'Link de imagem corrigido para o produto ID {id_produto}: {novo_link}')
 
-def save_xml(root, filename):
-    tree = ET.ElementTree(root)
-    tree.write(filename)
-    print('Arquivo XML atualizado com sucesso.')
+def processar_xml(root):
+    for produto in root.findall('product'):
+        remover_produtos_sem_estoque(root)
+
+        id_produto = produto.find('id').text
+
+        ids_produtos_cor = ['261557', '235840']
+        adicionar_cor_a_produtos(id_produto, ids_produtos_cor, produto)
+
+        ids_produtos_imagens = ['246804', '217865']
+        corrigir_links_de_imagem(id_produto, ids_produtos_imagens, produto)
+
+def salvar_xml(root, nome_arquivo):
+    arvore = ET.ElementTree(root)
+    arvore.write(nome_arquivo)
+    print('Arquivo XML corrigido com sucesso.')
 
 # URL do feed XML e nome do arquivo local
 url = 'https://storage.cloud.google.com/psel-feedmanager/feed_psel.xml'
-xml_dowload = 'feed_.xml'
-xml_edit = 'feed_psel.xml'
+xml_feed = 'feed_psel.xml'
+xml_exemplo = 'feed_psel_exemplo.xml'
 
 # Download do arquivo XML
-if download_xml(url, xml_dowload):
-    # Abre o arquivo XML
-    tree = ET.parse(xml_edit)
-    root = tree.getroot()
+if download_xml(url, xml_feed):
+    arvore = ET.parse(xml_exemplo)
+    raiz = arvore.getroot()
 
-    # Excluir produtos fora de estoque
-    remove_out_of_stock_products(root)
+    processar_xml(raiz)
 
-    # IDs dos produtos para adicionar cor
-    product_ids_color = ['261557', '235840']
-    add_color_to_products(root, product_ids_color)
-
-    # IDs dos produtos para corrigir os links de imagem
-    product_ids_images = ['246804', '217865']
-    correct_image_links(root, product_ids_images)
-
-    # Salvar as alterações em um novo arquivo XML
-    updated_xml_filename = 'feed_updated.xml'
-    save_xml(root, updated_xml_filename)
-
-
-
+    nome_arquivo_corrigido = 'feed_corrigido.xml'
+    salvar_xml(raiz, nome_arquivo_corrigido)
