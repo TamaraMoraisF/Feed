@@ -1,84 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feed>
-  <product>
-    <id>261557</id>
-    <tittle>Camiseta Basica Amarelo</tittle>
-    <description>Descricao da Camiseta Basica.</description>
-    <price>50.00</price>
-    <stock>5</stock>
-    <color>Amarelo</color>
-    <image_link>https://example.com/image1.jpg</image_link>
-  </product>
-  <product>
-    <id>235840</id>
-    <tittle>Sapato Azul</tittle>
-    <description>Descricao do Sapato Azul.</description>
-    <price>35.00</price>
-    <stock>2</stock>
-    <color>Azul</color>
-    <image_link>https://example.com/image2.jpg</image_link>
-  </product>
-  <product>
-    <id>246809</id>
-    <tittle>Calca Jeans Azul</tittle>
-    <description>Descricao da Calca Jeans.</description>
-    <price>45.00</price>
-    <stock>5</stock>
-    <color>Azul</color>
-    <image_link>https://example.com/image3.jpg</image_link>
-  </product>
-  <product>
-    <id>217865</id>
-    <tittle>Vestido Floral Verde</tittle>
-    <description>Descricao do Vestido Floral.</description>
-    <price>60.00</price>
-    <stock>15</stock>
-    <color>Vermelho</color>
-    <image_link>https://example.com/new_image_4f90fe.jpg</image_link>
-  </product>
-  <product>
-    <id>382910</id>
-    <tittle>Moletom Amarelo</tittle>
-    <description>Descricao do Moletom Amarelo.</description>
-    <price>40.00</price>
-    <stock>8</stock>
-    <color>Amarelo</color>
-    <image_link>https://example.com/image5.jpg</image_link>
-  </product>
-  <product>
-    <id>175640</id>
-    <tittle>Blusa Listrada Rosa</tittle>
-    <description>Descricao da Blusa Listrada.</description>
-    <price>55.00</price>
-    <stock>2</stock>
-    <color>Roxo</color>
-    <image_link>https://example.com/image6.jpg</image_link>
-  </product>
-  <product>
-    <id>277865</id>
-    <tittle>Jaqueta Jeans Azul</tittle>
-    <description>Descricao da Jaqueta Jeans.</description>
-    <price>70.00</price>
-    <stock>20</stock>
-    <color>Azul</color>
-    <image_link>https://example.com/image7.jpg</image_link>
-  </product>
-  <product>
-    <id>673489</id>
-    <tittle>Camisa Polo Preta</tittle>
-    <description>Descricao da Camisa Polo.</description>
-    <price>65.00</price>
-    <stock>12</stock>
-    <color>Branco</color>
-    <image_link>https://example.com/image9.jpg</image_link>
-  </product>
-  <product>
-    <id>246804</id>
-    <tittle>Blusa Rosa</tittle>
-    <description>Descricao da Blusa Rosa.</description>
-    <price>16.00</price>
-    <stock>10</stock>
-    <color>Vermelho</color>
-    <image_link>https://example.com/new_image_wdvlj5.jpg</image_link>
-  </product>
-</feed>
+<produtos>
+<item>
+<id>989812</id>
+<title>"Blusa moletom com capuz- Black"</title>
+<price>BRL 129.00</price>
+<link>"www.loja.com.br/p/blusa-moletom-com-capuz"</link>
+<image_link>"www.loja.com.br/imagens/blusa-moletom-com-capuz.jpg"</image_link>
+<product_type>"Moda &gt; Blusas"</product_type>
+<color>"Black"</color>
+<availability>"Em estoque"</availability>
+</item>
+<item>
+<id>261557</id>
+<title>"Calça de sarja- Azul"</title>
+<price>BRL 130.00</price>
+<link>"www.loja.com.br/p/calca-de-sarja"</link>
+<image_link>"www.loja.com.br/imagens/calca-de-sarja.jpg"</image_link>
+<product_type>"Moda &gt; Calças"</product_type>
+<color>Azul"</color>
+<availability>"Em estoque"</availability>
+</item>
+<item>
+<id>235840</id>
+<title>"Cardigan Helena - Rosa"</title>
+<price>BRL 55.00</price>
+<link>"www.loja.com.br/p/cardigan-helena"</link>
+<image_link>"www.loja.com.br/imagens/cardigan-helena.jpg"</image_link>
+<product_type>"Moda &gt; Cardigans"</product_type>
+<color>Rosa"</color>
+<availability>"Em estoque"</availability>
+</item>
+<item>
+<id>246804</id>
+<title>"Bolsa lateral - Off White"</title>
+<price>BRL 250.00</price>
+<link>"www.loja.com.br/p/bolsa-lateral"</link>
+<image_link>https://example.com/new_image_246804_66ui6r.jpg</image_link>
+<product_type>"Moda &gt; Acessórios"</product_type>
+<color>"Off White"</color>
+<availability>"Em estoque"</availability>
+</item>
+<item>
+<id>776143</id>
+<title>"Óculos de natação - Amarelo"</title>
+<price>BRL 49.00</price>
+<link>"www.loja.com.br/p/oculos-de-natacao"</link>
+<image_link>"www.loja.com.br/imagens/oculos-de-natacao.jpg"</image_link>
+<product_type>"Moda &gt; Acessórios"</product_type>
+<color>"Amarelo"</color>
+<availability>"Em estoque"</availability>
+</item>
+<item>
+<id>441684</id>
+<title>"Tênis Running - Rosa"</title>
+<price>BRL 149.40</price>
+<link>"www.loja.com.br/p/tenis-running"</link>
+<image_link>"www.loja.com.br/imagens/tenis-running.jpg"</image_link>
+<product_type>"Moda &gt; Calçados"</product_type>
+<color>"Rosa"</color>
+<availability>"Em estoque"</availability>
+</item>
+<item>
+<id>762398</id>
+<title>"Jaqueta Karen - Marrom"</title>
+<price>BRL 199.00</price>
+<link>"www.loja.com.br/p/jaqueta-karen"</link>
+<image_link>"www.loja.com.br/imagens/calca-legging-simples.jpg"</image_link>
+<product_type>"Moda &gt; Jaquetas"</product_type>
+<color>Marrom</color>
+<availability>"Em estoque"</availability>
+</item>
+<item>
+<id>818492</id>
+<title>"Luva Bordada minimalista - Off White"</title>
+<price>BRL 59.90</price>
+<link>"www.loja.com.br/p/luva-bordada-minimalista"</link>
+<image_link>"www.loja.com.br/imagens/luva-bordada-minimalista.jpg"</image_link>
+<product_type>"Moda &gt; Acessórios"</product_type>
+<color>Off White</color>
+<availability>"Em estoque"</availability>
+</item>
+</produtos>

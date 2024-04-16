@@ -1,1 +1,1 @@
-<products><product><id>1</id><stock>5</stock></product></products>
+<produtos><item><id>1</id><availability>"Em estoque"</availability></item></produtos>
