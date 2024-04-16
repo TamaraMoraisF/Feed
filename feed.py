@@ -28,17 +28,8 @@ def adicionar_cor_a_produtos(id_item, ids_produtos_cor, item):
 contador_sufixo = {}
 
 def corrigir_links_de_imagem(id_item, ids_produtos_imagens, item):
-    global contador_sufixo
-
     if id_item in ids_produtos_imagens:
-        if id_item not in contador_sufixo:
-            contador_sufixo[id_item] = 0
-        
-        sufixo_aleatorio = ''.join(random.choices(string.ascii_lowercase + string.digits, k=6))
-        novo_link = f'https://example.com/new_image_{id_item}_{sufixo_aleatorio}.jpg'
-        
-        contador_sufixo[id_item] += 1
-        
+        novo_link = item.find('image_link').text.replace('.mp3', '.jpg')
         item.find('image_link').text = novo_link
         print(f'Link de imagem corrigido para o item ID {id_item}: {novo_link}')
 
