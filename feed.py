@@ -1,6 +1,4 @@
 import requests
-import random
-import string
 import xml.etree.ElementTree as ET
 
 def download_xml(url, filename):
@@ -25,10 +23,9 @@ def adicionar_cor_a_produtos(id_item, ids_produtos_cor, item):
         ultima_palavra = nome.split()[-1]
         item.find('color').text = ultima_palavra
 
-contador_sufixo = {}
-
 def corrigir_links_de_imagem(id_item, ids_produtos_imagens, item):
-    if id_item in ids_produtos_imagens:
+    estoque = item.find('availability').text
+    if estoque == '"Em estoque"' and id_item in ids_produtos_imagens:
         novo_link = item.find('image_link').text.replace('.mp3', '.jpg')
         item.find('image_link').text = novo_link
         print(f'Link de imagem corrigido para o item ID {id_item}: {novo_link}')
@@ -55,7 +52,7 @@ def salvar_xml(root, nome_arquivo):
     print('Arquivo XML corrigido com sucesso.')
 
 # URL do feed XML e nome do arquivo local
-url = 'https://ff401d59c2a65eca56e0556319a230613acacb6808cee9dddf9201b-apidata.googleusercontent.com/download/storage/v1/b/psel-feedmanager/o/feed_psel.xml?jk=AWNiL9LLVdJGh0Co9PTJzhKJpMxLJk47hY1n8gkXUlca6j-h26XCqa1-76se6VLHqr5cdbS69vrWxyppjvDkj7kinPYBPQwnVuUZxbrJChaqwPO4yQSA5lrj1GG4DeDV8AdmLM-q4b9wxByQDW7ZlzGwcxv80mAqynyvvO62os4qV8JeMXl0q00LNr0iI5zMnAQfJqT00m_j6OcZlBN69d86B4hoti0WpN90t-ck-vtSWri5ge4EeJ_Wh6ITDaxvUKYgWAaCbCQ4Y44pChQZtogWTrA0WxHFVUp5cmr6boyPeS5asl4Cr9z-r8vw-GufEWruffuiw3j4UQamRU8RO_ive7yv6Xet-0Uq-mk-d5_W2KPkihaMdEczgGo5SY0p6AsygVD4XzcdgnNAiQQ8O9lcISNUkUC7CgmEyQENtXfsMSMrfoM_ntOMsBZ2ZBw-tTPZoF2mxe9xY2_gX7Xw0XcTWiiL-LjSd8-5Yt_qgsD_mRIN-cfUXbYs-M_re-okLse-dWY_b8Pcws_DhGyC6f0b_F-XwDGMC995kvaB_uAy6pGz_MDIa6HFhY4UwwXr8fYbqob4kdp6daHH6x5eZ2xa74Yk8C1nyJz4OEduTRl31Itu0ixu7DFpWcquf2wEemf-BXoCOANKrHps9tMDJXDQfsy8YWT4IDEyz5wAfLgUjAZ8owz1CWNfyVNvn9oJ5SFR5C1BuyDc7wbfXfywcyxzb7hgF6v7k7DYElOKnPj9yIQS3ychOojZGS0kDjoJ5A13MtQqa41culebF3adBkAq2JUfmhUb1mkHkH-E2yHz6MfF75nCBQ3f5dWS4fYruaz2dLnj_MltZz4qjQ4ZcYxx-L56TJsU8C3cc2QIkD4VyCPz4sU_O1mjATe4NUy1wcOl6DVROn1P7IBN7meF2jrEB1AhU4HpgyVSixqJOtZXUXHic28uHf4KWRF5Xtd-UrmBAL-1bGU24bzz-5kEO0whXQYPgJfi4LGBhD7FSPAs8EKSCuddSmNQFMnRLlYZK358vifG2TH-73bFThDFGP5RCjbOOiV-wjB8_sNbsSxLzBkKKr3sxqlvZZrpA3CtBqJc0ExHDwDHgxL44k399uGimQAkY94PDw&isca=1'
+url = 'https://ff06c38d0d5fb6cd1061f0be32d425c9ca90486fbad802ef2d697b4-apidata.googleusercontent.com/download/storage/v1/b/psel-feedmanager/o/feed_psel.xml?jk=AWNiL9J7fcU0wifZa6Na8sdOUNMbaecDwuq4vYazphRAX9o2dTynrGFvwBsP1lCGobUUSqPeJdeyKsKSP021mMocGSXhpDsY6uzaMEHqkdm6jxhMW49oqKXrZB9K6kRm3muu-o3EqEWW9sR3zKHqGoZvsZGU_YG_1Vs4p-6FlRPF8wkHQ6L457CUBJRxtAlo-CRnUIDkUijrQvQKFQC7byz8cWybB-qYWpKr8F8P3Vtb151trjv35eMGeR1Jr-kr0PtQ59IQ_Rbwpznh0TYT2yX6o_c6sw1MkGTwJLyF5AaAokuJiaAv2i5BPKW6kA8EBrhqlaTDis7Tav-e67uaCjxLKgNA1wMlUPf7cDXY-aM8DfnyRPrteW3NQv3lxWtkSHToe6ny3D4BxqjC8ZrvCcDi7dnteFJquHmx9EWVHNNFcOrElmUz6RXHwof9FwltGQyuiS2rl_vIhQX_Zqqrm8nxGX2HLt_UhkD8TpqXu4VY6CzK9aC-zL0aLI_fMBgbK8L0rxbEMN5XGjEf4ick4y2Ichp1fsejc2rejO0-m2_AUP40K19civSKMKENImcwzcGMmMMqe1VypO932Fsoc6mBvOjqBIOcaeD_5Y0cjRJyByvBIHUg9dWRLhgH3koHIiPdyn814x6hRXl300MrUbMWSShPS91tc85aF0x4VXrgwSRkCYB1Omv4KyckNCfGSCvIVbqQOe_xvBS9t5ogKg1bpYhZY_IyRSUNmtXIo8ewd_ZUxPM2nUtHqydA0hHv8UvnVax3597_D5Nqw__6x8wsZ2MSbNVrPfnPjiQPEhJ2R98YoIbdqLdJAryCkxgFvSu8qZOx54QA8lqWFkI5St6x3j3bRMUNUbkTL8YIM84C9VtSvmemvnP5lMRWp_9XCpS_V4qkok6uU70DVS7Z6KwSfh-WgOfCSU5bJqSpFsToi0zxWN8XpHtNCmCeBIp9XQnOLV0yUPR1lgBNkxTnrPALB1M2D7E-wn4E_roS5bFkZmwyjJJpahlypc48z_1mGc-W83LgAURYFE6Ddm1Esi5qQV5CyTZVCUXMoLotKDxzOSBG-LPU4r36dOcJKFLSbva6GFf9p1nQSAAkuXodf4uJwd90mjattA&isca=1'
 xml_feed = 'feed_psel.xml'
 
 # Download do arquivo XML

@@ -25,7 +25,6 @@ class TestFeedFunctions(unittest.TestCase):
         items_em_estoque = root.findall("item[availability='\"Fora de estoque\"']")
         self.assertEqual(len(items_em_estoque), 0)
 
-    
     def test_adicionar_cor_a_produtos(self):
         item = ET.Element('item')
         id_produto = ET.SubElement(item, 'id')
@@ -37,19 +36,23 @@ class TestFeedFunctions(unittest.TestCase):
         self.assertEqual(cor.text, 'Azul')
 
     def test_corrigir_links_de_imagem(self):
-        item = ET.Element('item')
-        id_produto = ET.SubElement(item, 'id')
-        id_produto.text = '246804'
-        link_imagem = ET.SubElement(item, 'image_link')
-        feed.corrigir_links_de_imagem('246804', ['246804'], item)
-        self.assertTrue(link_imagem.text.startswith('https://example.com/new_image_'))
+        xml_string = '<produtos>' \
+                    '<item><id>246804</id><availability>"Em estoque"</availability><image_link>https://example.com/old_image.mp3</image_link></item>' \
+                    '<item><id>217865</id><availability>"Fora de estoque"</availability><image_link>https://example.com/old_image.mp3</image_link></item>' \
+                    '</produtos>'
+        root = ET.fromstring(xml_string)
+        item_to_correct = root.find("item[id='246804']")
+        feed.corrigir_links_de_imagem('246804', ['246804'], item_to_correct)
+        corrected_link = item_to_correct.find('image_link').text
+        self.assertTrue(corrected_link.startswith('https://example.com/old_image.jpg'))
+
 
     def test_processar_xml(self):
         xml_string = '<produtos><item><id>1</id><availability>"Em estoque"</availability></item><item><id>2</id><availability>"Fora de estoque"</availability></item></produtos>'
         root = ET.fromstring(xml_string)
         feed.processar_xml(root)
-        self.assertEqual(root.find('item/id').text, '1')
-
+        items_em_estoque = root.findall("item[availability='\"Fora de estoque\"']")
+        self.assertEqual(len(items_em_estoque), 0)
 
     def test_salvar_xml(self):
         root = ET.Element('feed')
