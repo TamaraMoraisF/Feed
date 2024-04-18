@@ -12,33 +12,36 @@ def download_xml(url, filename):
         print("Falha ao obter o XML:", response.status_code)
         return False
     
-def remover_produtos_sem_estoque(root, item):
+def remover_item_sem_estoque(root, item):
     estoque = item.find('availability').text
     if estoque != '"Em estoque"':
         root.remove(item)
 
-def adicionar_cor_a_produtos(id_item, ids_produtos_cor, item):
+def adicionar_cor_ao_item(id_item, ids_produtos_cor, item):
     if id_item in ids_produtos_cor:
         nome = item.find('title').text
-        ultima_palavra = nome.split()[-1]
-        item.find('color').text = ultima_palavra
+        cor = nome.split()[-1]
+        item.find('color').text = cor
 
 def corrigir_links_de_imagem(id_item, ids_produtos_imagens, item):
     estoque = item.find('availability').text
-    if estoque == '"Em estoque"' and id_item in ids_produtos_imagens:
+    if pode_corrigir(id_item, ids_produtos_imagens, estoque):
         novo_link = item.find('image_link').text.replace('.mp3', '.jpg')
         item.find('image_link').text = novo_link
         print(f'Link de imagem corrigido para o item ID {id_item}: {novo_link}')
 
+def pode_corrigir(id_item, ids_produtos_imagens, estoque):
+    return estoque == '"Em estoque"' and id_item in ids_produtos_imagens
+
 
 def processar_xml(root):
     for item in root.findall('item'):
-        remover_produtos_sem_estoque(root, item)
+        remover_item_sem_estoque(root, item)
 
         id_item = item.find('id').text
 
         ids_produtos_cor = ['261557', '235840']
-        adicionar_cor_a_produtos(id_item, ids_produtos_cor, item)
+        adicionar_cor_ao_item(id_item, ids_produtos_cor, item)
 
         ids_produtos_imagens = ['246804', '217865']
         corrigir_links_de_imagem(id_item, ids_produtos_imagens, item)
