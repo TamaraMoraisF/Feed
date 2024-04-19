@@ -9,7 +9,7 @@ O script em Python `feed.py` permite realizar diversas operações em feeds XML 
 ## Dependências
 
 - `requests`
-- `xml.etree.ElementTree
+- `xml.etree.ElementTree`
 
 ## Uso
 1. #### Clone o repositório:
@@ -18,7 +18,7 @@ O script em Python `feed.py` permite realizar diversas operações em feeds XML 
 
 2. #### Instale as dependências:
    ```bash
-   python feed.py
+   pip install requests
 
 3. #### Execute o script:
    ```bash
@@ -50,14 +50,14 @@ O script em Python `feed.py` permite realizar diversas operações em feeds XML 
    
    #### Processar o XML
    
-      root = feed.process_xml(xml_feed)
+      root = feed.rocessar_xml(xml_feed)
    
    #### Salvar o XML processado
       
-      feed.save_xml(root, 'processed_feed.xml')
+      feed.salvar_xml(root, 'processed_feed.xml')
 
    
 ## Testes:
    Os testes estão localizados no arquivo test_feed.py. Execute os testes com o seguinte comando:
      
-      python -m unittest test_feed.py
+      python -m unittest teste_feed.py
