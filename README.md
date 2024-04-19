@@ -1,63 +1,63 @@
-Aqui está um README.md mais completo com as tags de marcação:
+# Processador de Feeds XML
 
-markdown
+Este é um projeto de processamento de feeds XML de produtos no Feed Manager.
 
-# Processador de Feed XML
+## Descrição
 
-Este é um script em Python para processar feeds XML de produtos.
+O script em Python `feed.py` permite realizar diversas operações em feeds XML de produtos, incluindo download do XML, remoção de produtos sem estoque, adição de cor aos produtos e correção de links de imagem.
 
 ## Dependências
 
 - `requests`
-- `xml.etree.ElementTree`
+- `xml.etree.ElementTree
 
 ## Uso
-
-1. Clone o repositório:
-
+1. #### Clone o repositório:
    ```bash
    git clone https://github.com/seu-usuario/feed-xml-processor.git
-Instale as dependências:
 
-bash
+2. #### Instale as dependências:
+   ```bash
+   python feed.py
 
-pip install -r requirements.txt
-Execute o script:
+3. #### Execute o script:
+   ```bash
+   python feed.py
 
-bash
+## Funcionalidades:
 
-python process_feed.py
-Funcionalidades
-Download de XML de feed
-Remoção de produtos sem estoque
-Adição de cor aos produtos
-Correção de links de imagem
-Exemplo de Uso
-python
-Copy code
-import feed
+   • Download de XML de feed
+   
+   • Remoção de produtos sem estoque
+   
+   • Adição de cor aos produtos
+   
+   • Correção de links de imagem
+   
+   
+## Exemplo de Uso:
 
-# URL do feed XML e nome do arquivo local
-url = 'https://example.com/feed.xml'
-xml_feed = 'feed.xml'
+   import feed
+   
+   #### URL do feed XML e nome do arquivo local
+      url = 'https://example.com/feed.xml'
+      
+      xml_feed = 'feed.xml'
+   
+   #### Download do arquivo XML
+   
+      feed.download_xml(url, xml_feed)
+   
+   #### Processar o XML
+   
+      root = feed.process_xml(xml_feed)
+   
+   #### Salvar o XML processado
+      
+      feed.save_xml(root, 'processed_feed.xml')
 
-# Download do arquivo XML
-feed.download_xml(url, xml_feed)
-
-# Processar o XML
-root = feed.process_xml(xml_feed)
-
-# Salvar o XML processado
-feed.save_xml(root, 'processed_feed.xml')
-Testes
-Os testes estão localizados no arquivo test_feed.py. Execute os testes com o seguinte comando:
-
-bash
-
-python -m unittest test_feed.py
-Contribuição
-Contribuições são bem-vindas! Abra uma issue para discutir as mudanças propostas.
-
-
-
-
+   
+## Testes:
+   Os testes estão localizados no arquivo test_feed.py. Execute os testes com o seguinte comando:
+     
+      python -m unittest test_feed.py
