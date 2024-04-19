@@ -54,7 +54,7 @@ O script em Python `feed.py` permite realizar diversas operações em feeds XML 
    
    #### Salvar o XML processado
       
-      feed.salvar_xml(root, 'processed_feed.xml')
+      feed.salvar_xml(root, 'feed_corrigido.xml')
 
    
 ## Testes:
